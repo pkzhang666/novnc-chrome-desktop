@@ -16,6 +16,8 @@ if ! echo "$RESOLUTION_WIDTH"  | grep -qE '^[0-9]+$' || \
   exit 1
 fi
 
-export RESOLUTION_WIDTH RESOLUTION_HEIGHT
+# Add headroom for the Fluxbox toolbar (~28px) so Chrome fits without being shifted off-screen
+DISPLAY_HEIGHT=$((RESOLUTION_HEIGHT + 40))
+export RESOLUTION_WIDTH RESOLUTION_HEIGHT DISPLAY_HEIGHT
 
 exec /usr/bin/supervisord -n -c /etc/supervisor/conf.d/supervisord.conf
