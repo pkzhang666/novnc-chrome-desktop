@@ -1,0 +1,18 @@
+# Secrets
+.env
+terraform/terraform.tfvars
+
+# Terraform state
+terraform/.terraform/
+terraform/.terraform.lock.hcl
+terraform/terraform.tfstate
+terraform/terraform.tfstate.backup
+terraform/*.tfstate*
+terraform/crash.log
+
+# Chrome profile (local dev)
+chrome-data/
+
+# OS / editor
+.DS_Store
+*.swp
